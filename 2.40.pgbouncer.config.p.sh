@@ -11,7 +11,7 @@ psql <<-EOF
   \q
 EOF
 
-[ ! -f /etc/pgbouncer/pgbouncer.ini.org ] $$ cp /etc/pgbouncer/pgbouncer.ini /etc/pgbouncer/pgbouncer.ini.org
+[ ! -f /etc/pgbouncer/pgbouncer.ini.org ] && cp /etc/pgbouncer/pgbouncer.ini /etc/pgbouncer/pgbouncer.ini.org
 
 #@=====[pgbouncer /etc/pgbouncer/pgbouncer.ini ]
 
