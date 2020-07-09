@@ -50,6 +50,8 @@ do
  echo "\"$f1\"" "\"$f2\"" >> /etc/pgbouncer/userlist.txt
 done
 
+cat /etc/pgbouncer/userlist.txt
+
 rm /tmp/users.tmp
 
 

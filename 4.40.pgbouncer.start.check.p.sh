@@ -6,6 +6,9 @@ repmgr -f /etc/repmgr/${PGVER}/repmgr.conf cluster show
 
 
 #enable pgbouncer and start on all servers
+sudo chown -R postgres:postgres /var/run/pgbouncer
+sudo chown -R postgres:postgres /var/log/pgbouncer
+
 sudo systemctl enable pgbouncer
 ssh postgres@pg02.localnet "sudo systemctl enable postgresql"
 ssh postgres@pg03.localnet "sudo systemctl enable postgresql"
