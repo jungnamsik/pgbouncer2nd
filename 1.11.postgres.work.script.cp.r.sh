@@ -3,6 +3,6 @@
 
 mkdir -p /home/postgres/work
 
-\cp ./*.p.sh /home/postgres/work/.
+\mv ./*.p.sh /home/postgres/work/.
 
 chown -R postgres:postgres /home/postgres/work
