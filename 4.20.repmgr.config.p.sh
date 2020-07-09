@@ -72,9 +72,11 @@ if [ "${NODE_NAME}" = "pg01" ]; then
     ssh pg02.localnet "mkdir ~/work"
     ssh pg03.localnet "mkdir ~/work"
 
-    scp ~/work/2.2.repmgr.config.sh pg02.localnet:~/work/.
-    scp ~/work/2.2.repmgr.config.sh pg03.localnet:~/work/.
+    THIS_NAME="`pwd`/$0"
+    scp ${THIS_NAME} pg02.localnet:${THIS_NAME}
+    scp ${THIS_NAME} pg03.localnet:${THIS_NAME}
 
-    ssh pg02.localnet "bash ~/work/2.2.repmgr.config.sh"
-    ssh pg03.localnet "bash ~/work/2.2.repmgr.config.sh"
+    ssh postgres@pg02.localnet "bash ${THIS_NAME}"
+    ssh postgres@pg03.localnet "bash ${THIS_NAME}"
+
 fi
