@@ -13,5 +13,7 @@ create user newappo with password 'pass1234' ;
 create user newsvc with password 'pass1234' ;
  
 --- echo -- 신규 DB 생성
-create database newdb with OWNER=newappo ;
- 
+create database newdb with newappo ;
+
+
+-- psql -h localhost -U postgres -f newdb.run.01.sql
